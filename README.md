@@ -26,12 +26,23 @@ International Skin Imaging Collaboration (ISIC) 2018 Skin Lesions dataset consis
 
 
 ## Usage
--To train Mask R-CNN on ISIC 2018 dataset
+###### To train the model
+train Mask R-CNN on ISIC 2018 dataset
 ```
 python lesions.py --mode train
 ```
+
+###### To validate the model
+```
+python lesions.py --mode investigate
+```
+###### To predict from the model
 When Mask R-CNN is trained, predictions are done with
 ```
 python lesions.py --mode predict \
 --image isic2018/ISIC2018_Task1-2_Training_Input/ISIC_0000000.jpg
+```
+## Credits
+```
+
 ```
