@@ -7,4 +7,30 @@ The goal of this project is to automatically segment the boundaries of potential
 
 ![Overview](skin1.png)
 
-Segmentation in this project is performed with the Mask R-CNN. The Mask R-CNN algorithm was introduced by Facebook AI Research in their 2017 [paper](https://arxiv.org/pdf/1703.06870.pdf), Mask R-CNN. Mask R-CNN builds on the previous object detection work of R-CNN, Fast R-CNN, and Faster R-CNN by Girshick et al. (Faster R-CNN architecture takes the output of the ROI Pooling module and passes it through two FC layers. The output of these FC layers feed into the final two FC layers of the network. The First FC layer for each of the class labels and an additional label for the background, the second FC layer for corresponding bounding box predictions.) Faster R-CNN is turned into a Mask R-CNN by adding an additional branch to the network. This additional branch is responsible for predicting the actual mask of an object class.
+Segmentation in this project is performed with the Mask R-CNN pre-trained on COCO model. The Mask R-CNN algorithm was introduced by Facebook AI Research in their 2017 [paper](https://arxiv.org/pdf/1703.06870.pdf), Mask R-CNN. Mask R-CNN builds on the previous object detection work of R-CNN, [Faster R-CNN](https://arxiv.org/pdf/1506.01497.pdf). Faster R-CNN is turned into a Mask R-CNN by adding an additional branch to the network. This additional branch is responsible for predicting the actual mask of an object class.
+
+
+## Dependencies
+This project has the following dependencies: 
+-Numpy
+-Scikit-learn 
+-Keras 
+-Tensorflow 
+-OpenCV
+
+
+
+## Dataset used
+International Skin Imaging Collaboration (ISIC) 2018 Skin Lesions dataset consisting of 2,594 images in JPEG format (11GB) and 2,594 corresponding ground-truth masks in PNG format (27MB).All masks are encoded as single-channel (grayscale) images. Each pixel in the mask has only one of two values 0: Areas outside the lesion, 255: Areas inside the lesion.
+
+
+## Usage
+-To train Mask R-CNN on ISIC 2018 dataset
+```
+python lesions.py --mode train
+```
+When Mask R-CNN is trained, predictions are done with
+```
+python lesions.py --mode predict \
+--image isic2018/ISIC2018_Task1-2_Training_Input/ISIC_0000000.jpg
+```
