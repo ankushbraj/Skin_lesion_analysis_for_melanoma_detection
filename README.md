@@ -12,12 +12,13 @@ Segmentation in this project is performed with the Mask R-CNN pre-trained on COC
 
 ## Dependencies
 This project has the following dependencies: 
--Numpy
--Scikit-learn 
--Keras 
--Tensorflow 
--OpenCV
-
+```
+Numpy
+Scikit-learn 
+Keras 
+Tensorflow 
+OpenCV
+```
 
 
 ## Dataset used
