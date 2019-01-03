@@ -44,5 +44,6 @@ python lesions.py --mode predict \
 ```
 ## Credits
 ```
-
+Adrian Rosebrock from Pyimagesearch
+https://github.com/matterport/Mask_RCNN
 ```
